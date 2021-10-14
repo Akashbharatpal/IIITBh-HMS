@@ -1,0 +1,42 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Poppins-Medium";
+    src: url(./font/Poppins-Medium.ttf);
+}
+@font-face {
+    font-family: "Poppins-SemiBold";
+    src: url(./font/Poppins-SemiBold.ttf);
+}
+
+.poppins-medium{
+    font-family: "Poppins-Medium";
+}
+.poppins-semibold{
+    font-family: "Poppins-SemiBold";
+}
+
+/* Color theme for app */
+.dark-blue{
+    color: #264653;
+}
+.blue{
+    color: #2A9D8F;
+}
+.yellow{
+    color:#E9C46A;
+}
+.orange{
+color: #F4A261;
+}
+.red{
+color:#E76F51;
+}
+
+h1{
+    font-size: 4rem;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "hms-iiitbh",
+  "version": "1.0.0",
+  "description": "hostel management system for IIIT Bhagalpur",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bharat Pal",
+  "license": "ISC"
+}

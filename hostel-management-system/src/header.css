@@ -1,0 +1,46 @@
+@import './index.css';
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+}
+
+.hostel-button{
+    border:none;
+    border-radius: 50%;
+    background: #F4A26195;
+    color: #264653;
+    padding:10px;
+}
+
+.hostel-button:active{
+    background: #F4A26169;
+
+}
+
+.search-bar{
+    background: #F4A26169;
+    border:none;
+    padding-left: 1em;
+    font-size: 1em;
+    font-family: 'Poppins-SemiBold';
+    outline: none;
+    border-radius: 1.25em 0em 0em 1.25em ;
+    flex-grow: 2;
+    height: 2.5em;
+    width: 100%;
+}
+
+.search-button{
+    border:none;
+ border-radius: 0% 2em 2em 0%;
+  padding: 0px 10px 0px 10px;
+  background: #F4A26195;
+  color: #264653;
+}
+
+.search-button:active{
+    background: #F4A26169;
+}
