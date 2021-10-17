@@ -2,7 +2,7 @@
 
 .calendar{
     font-family:'Poppins-SemiBold';
-    max-width: 400px;
+    max-width: 500px;
     max-height: 350px;
     border-radius: 30px;
     background: white;
@@ -19,14 +19,24 @@
 }
 
 .month{
-    padding: 15px;
+    font-family: inherit;
+    font-size: 2em;
+    color: inherit;
+    border: none;
+    background: none;
+    outline: none;
+    
     flex-grow: 1;
+}
+.month:hover{
+    background: #66575430;
+    border-radius: 40px;
 }
 
 .week-day{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
     color: #E76F51;
-    justify-content: space-evenly;
     border-bottom: #E76F51 solid;
     border-top: #E76F51 solid;
 }
@@ -46,8 +56,22 @@
     border-radius:50%;
     outline: none;
     color: inherit;
-    width: 17%;
+    width: 35px;
 }
 .year-button:active{
     background-color: #F4A261;
+}
+
+.month-changer{
+    border: none;
+    height: 50px;
+    background: none;
+    font-family: inherit;
+    font-size: 1.5rem;
+    color: inherit;
+}
+.month-changer:hover{
+    background: #E76F5169;
+    border-radius: 20px;
+
 }
