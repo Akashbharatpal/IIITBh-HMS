@@ -2,8 +2,8 @@
 
 .calendar{
     font-family:'Poppins-SemiBold';
-    max-width: 500px;
-    max-height: 350px;
+    width: 500px;
+    height: 320px;
     border-radius: 30px;
     background: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 29px 0px;

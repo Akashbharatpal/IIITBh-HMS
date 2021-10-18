@@ -48,10 +48,10 @@ function Calendar() {
     const CalendarBody = () => {
 
         const isLeapYear = (year) => {
-            return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)
+            return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
         }
 
-        const getFebDays = (year) => {
+        const getFebDays = () => {
             return isLeapYear(year) ? 29 : 28
         }
 
@@ -82,17 +82,14 @@ function Calendar() {
 
     return (
         <React.Fragment>
-            <Draggable>
+            <Draggable bounds='html' defaultPosition={{ x: window.innerWidth - 500, y: window.innerHeight - 480 }}>
                 <div className='calendar'>
                     {monthCard ? <MonthCard />
                         : <><CalanderHead /> <CalendarBody /></>}
-
                 </div>
             </Draggable>
-        </React.Fragment>
+        </React.Fragment >
     );
 }
-
-
 
 export default Calendar;
