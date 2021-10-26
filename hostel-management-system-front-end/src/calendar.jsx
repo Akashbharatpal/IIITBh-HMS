@@ -82,7 +82,7 @@ function Calendar() {
 
     return (
         <React.Fragment>
-            <Draggable bounds='html' defaultPosition={{ x: window.innerWidth - 500, y: window.innerHeight - 480 }}>
+            <Draggable bounds='html'>
                 <div className='calendar'>
                     {monthCard ? <MonthCard />
                         : <><CalanderHead /> <CalendarBody /></>}
