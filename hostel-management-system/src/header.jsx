@@ -13,43 +13,28 @@ const Header = ({hostel, id, color})=>{
     const [formS, setFormS] = useState(false);
     const [formEmp, setFormEmp] = useState(false);
     const [formEquip, setFormEquip] = useState(false);
+    // const [sideNav,setNav] = useState(false);
     const page = url.substr(url.lastIndexOf("/")+1,url.length-1);
     
     return (
         <React.Fragment>
-            <div style={{display:"flex",borderBottomStyle: 'solid', borderBottomWidth: '2px', borderBottomColor: url==="/"?'lightgray':color}}>
+            <div style={{display:"flex",borderBottomStyle: 'solid',justifyContent:"space-evenly", borderBottomWidth: '2px',borderBottomColor: url==="/"?'lightgray':color}}>
 
             <div className='container' style={{
                 flexGrow:"4"
             }}>
-                {url==="/" ?
-                <div style={{ flexGrow: '1', display: 'flex', justifyContent: 'center' }}> <img src={logo} alt="logo" width='70px' height='100%' />
-                </div>:
-                <div style={{ flexGrow: "1", display:'flex',justifyContent: "center" }}>
-                <Link to="/">
-                    <button title="Back" className="backbutton">
-                        <MaterialIcon icon="arrow_back" size={40} />
-                    </button>
-                </Link>
-            </div>}
-
-
+                <div style={{display:"flex",justifyContent:"space-evenly",flexGrow:"0.5"}}>
+                    <button className="hostel-button" onClick={()=>{openNav()}}><MaterialIcon icon="menu" size={36}></MaterialIcon></button>
+                </div>
+                {url==="/" &&
+                <img src={logo} alt="logo" width='50px' height='auto'/>
+                }
                     <h1 style={{fontSize:"2.5em",flexGrow:"1", fontFamily:"Poppins-Light",color:"#264653"}} >{hostel?hostel:"Hostel Management System"}</h1>
             
-                {url==="/"?<div style={{flexGrow:"6"}}></div>:<div style={{display:'flex',justifyContent:'space-evenly',flexGrow:"3",height:"100%"}}>
-                    <Link className="links" style={url === `/${id}/student`?{borderBottomStyle: "solid",
-                                borderBottomColor:color
+                {url==="/"?<div style={{flexGrow:"6"}}></div>:<div style={{display:'flex',justifyContent:'space-evenly',flexGrow:"6",height:"100%"}}>
+                    <Link className="links" style={url === `/${id}/student`?{borderBottomStyle: "solid", color: color, borderBottomColor:color
                                 }:null} to={`/${id}/student`}>
-					<h2
-						style={
-                            url === `/${id}/student`
-                            ? {
-                                color: color,
-                                width: "fit-content",
-                            }
-                                    : null
-                                }
-                                >
+					<h2>
 						Student
 					</h2>
 				</Link>
@@ -102,18 +87,28 @@ const Header = ({hostel, id, color})=>{
                             } 
                         }}><MaterialIcon icon="add" size={36} /></button>
                     
-                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <input type='text' placeholder='Search' className="search-bar" title="Search bar" />
-                        <button className='search-button' title='Search'><MaterialIcon icon="search" size={36} /></button>
-                    </div>
                 </div>
             </div>
             {formH && <HostelForm cancel={()=>setFormH(false)}/>}
             {formS && <StudentForm cancel={()=>setFormS(false)}/>}
             {formEmp && <EmployeeForm cancel={()=>setFormEmp(false)}/>}
             {formEquip && <EquipmentForm cancel={()=>setFormEquip(false)}/>}
+
+            <div id="mySidenav" className="sidenav" role="menu"> </div>
+            <div id="drop" className="drop" onClick={()=>closeNav()}></div>
         </React.Fragment>
     );
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "400px";
+        document.getElementById("drop").style.width = "100%";
+    }
+    
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("drop").style.width = "0";
+    }
 }
+
 
 export default Header;
