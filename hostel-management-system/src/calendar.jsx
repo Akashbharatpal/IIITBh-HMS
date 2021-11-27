@@ -180,7 +180,10 @@ function Calendar() {
 
 	return (
 		<React.Fragment>
-			<Draggable bounds="html">
+			<Draggable
+				bounds="html"
+				defaultPosition={{ x: 1905 - 550, y: 952 - 350 }}
+			>
 				<div className="calendar">
 					{monthCard ? (
 						<MonthCard />
